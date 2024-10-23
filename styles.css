@@ -47,7 +47,7 @@ body {
   }
   
   .eraser-icon {
-    width: 30px; 
+    width: 40px; 
     height: auto; 
   }
 
@@ -71,3 +71,69 @@ body {
   .star {
       animation: twinkle 1.5s infinite alternate; /* Animacion de parpadeo */
   }
+
+ 
+/* Responsive settings*/
+/* Pantalla mobile */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 0; 
+        margin: 0% 4% 0% 0%;
+    }
+
+    .toolbox {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        padding: 0.5rem;
+    }
+
+    .toolbox > * {
+        font-size: 1rem;
+        height: 40px;
+        width: 40px;
+        margin: 0.25rem;
+    }
+
+    canvas {
+        width: 90%;
+        max-width: 100%;
+        height: calc(100vh - 200px);
+        margin: 0 auto; 
+        display: block;
+    }
+}
+
+/* Pantallas mobile mas pequeñas */
+@media (max-width: 480px) {
+    body {
+        min-height: 100vh;
+        margin: 0% 4% 0% 0%;
+    }
+
+    .toolbox {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .toolbox > * {
+        font-size: 0.9rem;
+        height: 35px;
+        width: 35px;
+        margin: 0.25rem;
+    }
+
+    canvas {
+        width: 90%;
+        max-width: 100%;
+        height: calc(100vh - 180px);
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+  

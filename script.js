@@ -93,7 +93,7 @@ function createStars(numStars) {
         const star = document.createElement('div');
         star.classList.add('star');
 
-        // Establecer tamaño y posición aleatoria
+        // Establecer tamaño y posición aleatoria de estrellas
         const size = Math.random() * 3 + 1; 
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
