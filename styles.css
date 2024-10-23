@@ -13,7 +13,11 @@ body {
     border: 2px solid #eb471c;
     background-color: white; 
     position: relative; 
-    z-index: 2; 
+    z-index: 2;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%; 
+    border-bottom-left-radius: 0%; 
+    border-bottom-right-radius: 0%;
   }
   
   .toolbox {
@@ -22,6 +26,10 @@ body {
     display: flex;
     width: 804px;
     padding: 1rem;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%; 
+    border-bottom-left-radius: 10%; 
+    border-bottom-right-radius: 10%;
   }
   
   .toolbox > * {
@@ -80,7 +88,7 @@ body {
         flex-direction: column;
         min-height: 100vh;
         padding: 0; 
-        margin: 0% 4% 0% 0%;
+        margin: 0;
     }
 
     .toolbox {
