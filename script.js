@@ -16,7 +16,6 @@ let y;
 
 canvas.addEventListener('mousedown', (e) => {
     isPressed = true;
-
     x = e.offsetX;
     y = e.offsetY;
 });
@@ -43,14 +42,12 @@ canvas.addEventListener('mousemove', (e) => {
 // Eventos para dispositivos móviles
 canvas.addEventListener('touchstart', (e) => {
     isPressed = true;
+    e.preventDefault(); // Prevenir el comportamiento predeterminado del navegador
 
-    // Prevenir el comportamiento predeterminado del navegador
-    e.preventDefault();
-
-    // Obtener la posición del toque
+    const rect = canvas.getBoundingClientRect();
     const touch = e.touches[0];
-    x = touch.offsetX;
-    y = touch.offsetY;
+    x = touch.clientX - rect.left; // Calcular la posición relativa al canvas
+    y = touch.clientY - rect.top;   // Calcular la posición relativa al canvas
 });
 
 canvas.addEventListener('touchend', () => {
@@ -63,9 +60,10 @@ canvas.addEventListener('touchmove', (e) => {
     if (isPressed) {
         e.preventDefault(); // Prevenir el desplazamiento de la página
 
+        const rect = canvas.getBoundingClientRect();
         const touch = e.touches[0];
-        const x2 = touch.offsetX;
-        const y2 = touch.offsetY;
+        const x2 = touch.clientX - rect.left; // Calcular la posición relativa al canvas
+        const y2 = touch.clientY - rect.top;   // Calcular la posición relativa al canvas
 
         drawCircle(x2, y2);
         drawLine(x, y, x2, y2);
